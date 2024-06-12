@@ -2,7 +2,7 @@ version: "3.9"
 services:
   llama1:
     image: llama-cpp-docker
-    name: llama1
+    container_name: llama1
     environment:
       - GGML_CUDA_NO_PINNED=1
       - CUDA_VISIBLE_DEVICES=0
@@ -17,7 +17,7 @@ services:
         mode: host
   llama2:
     image: llama-cpp-docker
-    name: llama2
+    container_name: llama2
     environment:
       - GGML_CUDA_NO_PINNED=1
       - CUDA_VISIBLE_DEVICES=1
@@ -32,7 +32,7 @@ services:
         mode: host
   llama3:
     image: llama-cpp-docker
-    name: llama3
+    container_name: llama3
     environment:
       - GGML_CUDA_NO_PINNED=1
       - CUDA_VISIBLE_DEVICES=2
