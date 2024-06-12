@@ -42,6 +42,6 @@ services:
     volumes:
       - ./models:/models
     ports:
-      - target: 8081
-        published: 8081
+      - target: 8082
+        published: 8082
         mode: host
