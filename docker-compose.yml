@@ -36,3 +36,15 @@ services:
       - ./models:/models
     ports:
       - "8082:8080"
+  llama4:
+    image: llama-cpp-docker
+    container_name: llama4
+    environment:
+      - GGML_CUDA_NO_PINNED=1
+      - LLAMA_CTX_SIZE=4096
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_N_GPU_LAYERS=99
+    volumes:
+      - ./models:/models
+    ports:
+      - "8083:8080"

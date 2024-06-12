@@ -6,27 +6,48 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              count: 8
               capabilities: [gpu]
     environment:
-      - CUDA_VISIBLE_DEVICES=0
+      - CUDA_VISIBLE_DEVICES=0,1
+      - OMP_NUM_THREADS=2
+      - MKL_NUM_THREADS=2
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
   llama2:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              count: 8
               capabilities: [gpu]
     environment:
-      - CUDA_VISIBLE_DEVICES=1
+      - CUDA_VISIBLE_DEVICES=2,3
+      - OMP_NUM_THREADS=2
+      - MKL_NUM_THREADS=2
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
   llama3:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              count: 8
               capabilities: [gpu]
     environment:
-      - CUDA_VISIBLE_DEVICES=2
+      - CUDA_VISIBLE_DEVICES=4,5
+      - OMP_NUM_THREADS=2
+      - MKL_NUM_THREADS=2
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
+  llama4:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 8
+              capabilities: [gpu]
+    environment:
+      - CUDA_VISIBLE_DEVICES=6,7
+      - OMP_NUM_THREADS=2
+      - MKL_NUM_THREADS=2
