@@ -65,4 +65,4 @@ LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
 }')
 
 set -x
-llama-server $LLAMA_ARGS
+llama-server $LLAMA_ARGS --log-enable --log-new --log-append

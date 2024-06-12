@@ -28,7 +28,7 @@ USER llama
 
 WORKDIR /home/llama
 
-EXPOSE 8080 8081 8082
+EXPOSE 8080 8081 8082 8083 8084 8085 8086 8087
 
 # copy and set entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
