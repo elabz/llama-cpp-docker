@@ -5,14 +5,15 @@ services:
       context: ./nginx
     image: nginx:latest
     container_name: proxy
+    restart: unless-stopped
     ports:
       - "8110:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
       - ../logs/nginx:/var/log/nginx
   llama1:
     image: llama-cpp-docker
     container_name: llama1
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -25,11 +26,10 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8080:8080"
   llama2:
     image: llama-cpp-docker
     container_name: llama2
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -43,12 +43,11 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8081:8080"
 
   llama3:
     image: llama-cpp-docker
     container_name: llama3
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -62,12 +61,12 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8082:8080"
+
 
   llama4:
     image: llama-cpp-docker
     container_name: llama4
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -81,12 +80,11 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8083:8080"
 
   llama5:
     image: llama-cpp-docker
     container_name: llama5
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -100,12 +98,11 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8084:8080"
 
   llama6:
     image: llama-cpp-docker
     container_name: llama6
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -119,12 +116,12 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8085:8080"
+
 
   llama7:
     image: llama-cpp-docker
     container_name: llama7
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -138,12 +135,11 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8086:8080"
 
   llama8:
     image: llama-cpp-docker
     container_name: llama8
+    restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
@@ -157,5 +153,3 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-    ports:
-      - "8087:8080"
