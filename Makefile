@@ -31,6 +31,12 @@ llama-3-8b:
 phi-3-mini:
 	cd models && ../docker-entrypoint.sh $@
 
+L3-8B-Stheno-v3.2-Q4_K_M:
+	cd models && ../docker-entrypoint.sh $@
+
+L3-8B-Stheno-v3.2-Q5_K_M:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
