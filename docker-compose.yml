@@ -17,8 +17,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -33,8 +35,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -51,8 +55,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -70,8 +76,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -88,8 +96,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -106,8 +116,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -125,8 +137,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -143,8 +157,10 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_THREADS=3
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
