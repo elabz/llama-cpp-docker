@@ -6,7 +6,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 8
+              count: 2
               capabilities: [gpu]
     environment:
       - CUDA_VISIBLE_DEVICES=0
@@ -17,7 +17,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 8
+              count: 2
               capabilities: [gpu]
     environment:
       - CUDA_VISIBLE_DEVICES=1
