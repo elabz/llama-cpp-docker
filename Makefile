@@ -31,7 +31,7 @@ llama-3-8b:
 phi-3-mini:
 	cd models && ../docker-entrypoint.sh $@
 
-L3-8B-Stheno-v3.2-Q4_K_M:
+L3-8B-Stheno-v3.3-32K-Q5_K_M:
 	cd models && ../docker-entrypoint.sh $@
 
 L3-8B-Stheno-v3.2-Q5_K_M:
