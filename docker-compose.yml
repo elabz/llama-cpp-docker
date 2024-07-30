@@ -20,7 +20,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -38,7 +38,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -58,7 +58,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -79,7 +79,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -99,7 +99,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -119,7 +119,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -140,7 +140,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
@@ -160,7 +160,7 @@ services:
       - LLAMA_MODEL=/models/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
-      - LLAMA_THREADS=3
+      - LLAMA_THREADS=4
       - LLAMA_LOGDIR=/logs
       - LLAMA_LOG_NEW
       - LLAMA_LOG_ENABLE
