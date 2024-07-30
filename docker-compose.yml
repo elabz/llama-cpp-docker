@@ -10,6 +10,9 @@ services:
       - "8110:80"
     volumes:
       - ../logs/nginx:/var/log/nginx
+    networks:
+      - llms
+
   llama1:
     image: llama-cpp-docker
     container_name: llama1
@@ -28,6 +31,9 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
+    networks:
+      - llms
+
   llama2:
     image: llama-cpp-docker
     container_name: llama2
@@ -47,6 +53,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
+    networks:
+      - llms
 
   llama3:
     image: llama-cpp-docker
@@ -67,7 +75,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-
+    networks:
+      - llms
 
   llama4:
     image: llama-cpp-docker
@@ -88,7 +97,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-
+    networks:
+      - llms
   llama5:
     image: llama-cpp-docker
     container_name: llama5
@@ -108,7 +118,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-
+    networks:
+      - llms
   llama6:
     image: llama-cpp-docker
     container_name: llama6
@@ -128,7 +139,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-
+    networks:
+      - llms
 
   llama7:
     image: llama-cpp-docker
@@ -149,7 +161,8 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
-
+    networks:
+      - llms
   llama8:
     image: llama-cpp-docker
     container_name: llama8
@@ -169,3 +182,9 @@ services:
     volumes:
       - ./models:/models
       - ./logs:/logs
+    networks:
+      - llms
+
+networks:
+  llms:
+    name: llms
