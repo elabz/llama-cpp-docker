@@ -28,11 +28,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "L3-8B-Stheno-v3.2-Q5_K_M" ]; then
         MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.2-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf"
         MODEL_SHA256="a0c8810471e2ac1bc205c2e777ab1c3e369273321e7f7d5d27223cd2564d9a59"
-    elif [ "$1" = "L3-8B-Stheno-v3.2-Q4_K_M" ]; then
-        MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.2-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.2-Q4_K_M-imat.gguf"
-        MODEL_SHA256="8607a426b0c2007716df8a9eb96754e3ccca761a3996af5d49fcd74d87ada347"
+    elif [ "$1" = "L3-8B-Stheno-v3.3-32K-Q5_K_M" ]; then
+        MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.3-32K-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf"
+        MODEL_SHA256="b68243a85fb6091b737858a276a11cf613838e70ef6ba38647536341e984bda4"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.2-Q4_K_M]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.3-32K-Q5_K_M]"
 
         exit 1
     fi
@@ -68,4 +68,4 @@ LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
 }')
 
 set -x
-llama-server $LLAMA_ARGS --log-enable --log-new --log-append
+llama-server $LLAMA_ARGS --log-enable --log-new --log-append --logdir=/logs
