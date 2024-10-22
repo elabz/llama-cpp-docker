@@ -37,6 +37,9 @@ L3-8B-Stheno-v3.3-32K-Q5_K_M:
 L3-8B-Stheno-v3.2-Q5_K_M:
 	cd models && ../docker-entrypoint.sh $@
 
+nomic-embed-text-v1.5:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up

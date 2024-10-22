@@ -31,8 +31,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "L3-8B-Stheno-v3.3-32K-Q5_K_M" ]; then
         MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.3-32K-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf"
         MODEL_SHA256="b68243a85fb6091b737858a276a11cf613838e70ef6ba38647536341e984bda4"
+    elif [ "$1" = "nomic-embed-text-v1.5" ]; then
+        MODEL_URL="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/resolve/main/nomic-embed-text-v1.5.Q8_0.gguff"
+        MODEL_SHA256="3e24342164b3d94991ba9692fdc0dd08e3fd7362e0aacc396a9a5c54a544c3b7"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.3-32K-Q5_K_M]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5]"
 
         exit 1
     fi
