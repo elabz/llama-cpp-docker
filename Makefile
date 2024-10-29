@@ -40,6 +40,9 @@ L3-8B-Stheno-v3.2-Q5_K_M:
 nomic-embed-text-v1.5:
 	cd models && ../docker-entrypoint.sh $@
 
+Gemma2-Gutenberg-Doppel-9B:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
