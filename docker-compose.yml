@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=4096
+      - LLAMA_CTX_SIZE=2048
       - LLAMA_MODEL=/models/Gemma2-Gutenberg-Doppel-9B-Q4_K_L.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=4096
+      - LLAMA_CTX_SIZE=2048
       - LLAMA_MODEL=/models/Gemma2-Gutenberg-Doppel-9B-Q4_K_L.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
@@ -63,7 +63,7 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
+      - LLAMA_CTX_SIZE=4096
       - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
@@ -85,7 +85,7 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
+      - LLAMA_CTX_SIZE=4096
       - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
