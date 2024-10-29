@@ -35,8 +35,8 @@ if [ "$#" -eq 1 ]; then
         MODEL_URL="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/resolve/main/nomic-embed-text-v1.5.Q8_0.gguf"
         MODEL_SHA256="3e24342164b3d94991ba9692fdc0dd08e3fd7362e0aacc396a9a5c54a544c3b7"
     elif [ "$1" = "Gemma2-Gutenberg-Doppel-9B" ]; then
-        MODEL_URL="https://huggingface.co/bartowski/Gemma2-Gutenberg-Doppel-9B-GGUF/resolve/main/Gemma2-Gutenberg-Doppel-9B-Q6_K.gguf"
-        MODEL_SHA256="46dd5146d54a60853894f5b7f7a10a7af58b85ce4373da86182aff32136379fa"
+        MODEL_URL="https://huggingface.co/bartowski/Gemma2-Gutenberg-Doppel-9B-GGUF/resolve/main/Gemma2-Gutenberg-Doppel-9B-Q5_K_L.gguf"
+        MODEL_SHA256="e0de0fad968b4dc3a359db00825198d9df07ca82cd1f97b380a5cf0a6ff9f62e"
     else
         echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B]"
 
