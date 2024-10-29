@@ -81,7 +81,7 @@ services:
 
   llama4:
     image: llama-cpp-docker
-    container_name: llama3
+    container_name: llama4
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
