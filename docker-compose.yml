@@ -79,7 +79,7 @@ services:
       - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
-      - LLAMA_UBATCH_SIZE=512
+      - LLAMA_UBATCH_SIZE=1024
       - LLAMA_THREADS=4
       - LLAMA_LOG_FILE=llama
       - LLAMA_EMBEDDINGS=
@@ -99,7 +99,7 @@ services:
       - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
-      - LLAMA_UBATCH_SIZE=512
+      - LLAMA_UBATCH_SIZE=1024
       - LLAMA_THREADS=4
       - LLAMA_LOG_FILE=llama
       - LLAMA_EMBEDDINGS=
