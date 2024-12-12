@@ -25,9 +25,6 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "phi-3-mini" ]; then
         MODEL_URL="https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q6_K.gguf"
         MODEL_SHA256="597a483b0e56360cb488d3f8a5ec0fd2c3a3eb44da7bb69020b79ba7c1f6ce85"
-    elif [ "$1" = "L3-8B-Stheno-v3.2-Q5_K_M" ]; then
-        MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.2-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf"
-        MODEL_SHA256="a0c8810471e2ac1bc205c2e777ab1c3e369273321e7f7d5d27223cd2564d9a59"
     elif [ "$1" = "L3-8B-Stheno-v3.3-32K-Q5_K_M" ]; then
         MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.3-32K-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.3-32K-Q5_K_M-imat.gguf"
         MODEL_SHA256="b68243a85fb6091b737858a276a11cf613838e70ef6ba38647536341e984bda4"
@@ -37,8 +34,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "Gemma2-Gutenberg-Doppel-9B" ]; then
         MODEL_URL="https://huggingface.co/bartowski/Gemma2-Gutenberg-Doppel-9B-GGUF/resolve/main/Gemma2-Gutenberg-Doppel-9B-Q4_K_L.gguf"
         MODEL_SHA256="8a550abee0371c312e6c12bc5f57b4aa9573eb76d9cd184ef979f7dc0cd4af31"
+    elif [ "$1" = "Llama-3.2-3B-Instruct" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q8_0.gguf"
+        MODEL_SHA256="b5607b5090a8280063fff2d706bb3408ca6542341b06aab39c3eca0a28575921"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.2-Q5_K_M|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B|Llama-3.2-3B-Instruct]"
 
         exit 1
     fi

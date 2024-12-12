@@ -34,13 +34,13 @@ phi-3-mini:
 L3-8B-Stheno-v3.3-32K-Q5_K_M:
 	cd models && ../docker-entrypoint.sh $@
 
-L3-8B-Stheno-v3.2-Q5_K_M:
-	cd models && ../docker-entrypoint.sh $@
-
 nomic-embed-text-v1.5:
 	cd models && ../docker-entrypoint.sh $@
 
 Gemma2-Gutenberg-Doppel-9B:
+	cd models && ../docker-entrypoint.sh $@
+
+Llama-3.2-3B-Instruct:
 	cd models && ../docker-entrypoint.sh $@
 
 up:
