@@ -38,7 +38,7 @@ if [ "$#" -eq 1 ]; then
         MODEL_URL="https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q8_0.gguf"
         MODEL_SHA256="b5607b5090a8280063fff2d706bb3408ca6542341b06aab39c3eca0a28575921"
     elif [ "$1" = "phi-4" ]; then
-        MODEL_URL="https://huggingface.co/unsloth/phi-4-GGUF/raw/main/phi-4-Q3_K_M.gguf"
+        MODEL_URL="https://huggingface.co/unsloth/phi-4-GGUF/resolve/main/phi-4-Q3_K_M.gguf"
         MODEL_SHA256="128562e8e0f3bc3d05dbbdb6065995e1436ba91e6e260f368ae56865edea7ef5"
     else
         echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|phi-4|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B|Llama-3.2-3B-Instruct]"
