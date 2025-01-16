@@ -7,6 +7,7 @@ RUN mkdir -p /usr/local/etc/redis
 COPY redis.conf /usr/local/etc/redis/redis.conf
 COPY sysctl.conf /etc/sysctl.conf
 COPY start.sh /start.sh
+RUN sysctl vm.overcommit_memory=1
 RUN chmod +x /start.sh
 
 VOLUME /data

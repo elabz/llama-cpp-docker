@@ -43,6 +43,9 @@ Gemma2-Gutenberg-Doppel-9B:
 Llama-3.2-3B-Instruct:
 	cd models && ../docker-entrypoint.sh $@
 
+phi-4:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
