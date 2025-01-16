@@ -37,8 +37,8 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/phi-4-Q3_K_M.gguf
+      - LLAMA_CTX_SIZE=16384
+      - LLAMA_MODEL=/models/phi-4-Q2_K_L.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=512
       - LLAMA_UBATCH_SIZE=1024
@@ -57,8 +57,8 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/phi-4-Q3_K_M.gguf
+      - LLAMA_CTX_SIZE=16384
+      - LLAMA_MODEL=/models/phi-4-Q2_K_L.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=512
       - LLAMA_UBATCH_SIZE=1024
