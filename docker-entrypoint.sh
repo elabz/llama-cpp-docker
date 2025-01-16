@@ -40,8 +40,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "phi-4" ]; then
         MODEL_URL="https://huggingface.co/unsloth/phi-4-GGUF/resolve/main/phi-4-Q2_K_L.gguf"
         MODEL_SHA256="290ab4939168c8c94ff5eaddf8f328240ec8355eab8dd0641c6c31972a24752e"
+    elif [ "$1" = "Dolphin3.0-Llama3.2-3B" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-3B-GGUF/resolve/main/Dolphin3.0-Llama3.2-3B-Q8_0.gguf"
+        MODEL_SHA256="d7a51f65ebd35e7e7da5632274183c9b54f38330e015a6c73adca0bf3523fdae"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|phi-4|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B|Llama-3.2-3B-Instruct]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|phi-4|L3-8B-Stheno-v3.3-32K-Q5_K_M|nomic-embed-text-v1.5|Gemma2-Gutenberg-Doppel-9B|Llama-3.2-3B-Instruct|Dolphin3.0-Llama3.2-3B]"
 
         exit 1
     fi
