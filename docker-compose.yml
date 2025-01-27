@@ -12,22 +12,30 @@ services:
       - ./logs/nginx:/var/log/nginx
     networks:
       - llms
-  redis:
-    build:
-      context: ./redis
-    container_name: redis
-    restart: unless-stopped
+
+  qdrant:
+    build: ./qdrant
+    runtime: nvidia   # Remove for AMD GPUs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     ports:
-      - "6379:6379"
+      - "6333:6333"
+      - "6334:6334"
     volumes:
-      - ./redis:/data
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
+      - ./qdrant_data:/qdrant/storage
+      - ./qdrant/config:/qdrant/config
+    environment:
+      - QDRANT__STORAGE__OPTIMIZERS__GPU_MEMORY_FRACTION=0.75
+    command:
+      - "--enable-gpu"
+      - "--config-path"
+      - "/qdrant/config/config.yaml"
+    mem_limit: 24g
     networks:
       - llms
 
@@ -114,3 +122,5 @@ services:
 networks:
   llms:
     name: llms
+volumes:
+  qdrant_data:
