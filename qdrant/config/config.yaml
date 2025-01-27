@@ -1,0 +1,20 @@
+storage:
+  optimizers:
+    indexing_threshold: 10000
+    memmap_threshold: 20000
+
+  vectors:
+    on_disk: true  # Critical for 6GB VRAM
+
+  hnsw:
+    on_disk: true  # Store HNSW index on disk
+    m: 16
+    ef_construct: 128
+
+quantization:
+  scalar:
+    type: int8
+    always_ram: false
+
+service:
+  max_workers: 2  # Reduce parallelism for low VRAM
