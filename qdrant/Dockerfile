@@ -1,4 +1,4 @@
-FROM qdrant/qdrant:v1.8.0-gpu-nvidia
+FROM qdrant/qdrant:v1.13.0-gpu-nvidia
 
 # Copy config from adjacent config/ directory
 COPY config/config.yaml /qdrant/config/config.yaml
