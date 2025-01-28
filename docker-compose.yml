@@ -32,9 +32,6 @@ services:
     environment:
       - QDRANT__STORAGE__OPTIMIZERS__GPU_MEMORY_FRACTION=0.75
       - QDRANT__GPU__INDEXING=1
-    command:
-      - "--config-path"
-      - "/qdrant/config/config.yaml"
     mem_limit: 24g
     networks:
       - llms
