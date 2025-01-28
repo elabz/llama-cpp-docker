@@ -1,7 +1,6 @@
 storage:
   optimizers:
     indexing_threshold: 10000
-    memmap_threshold: 20000
 
   vectors:
     on_disk: true  # Critical for 6GB VRAM

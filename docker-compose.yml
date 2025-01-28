@@ -15,6 +15,7 @@ services:
 
   qdrant:
     build: ./qdrant
+    container_name: qdrant
     runtime: nvidia   # Remove for AMD GPUs
     deploy:
       resources:
