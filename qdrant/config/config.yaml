@@ -1,7 +1,4 @@
 storage:
-  optimizers:
-    indexing_threshold: 10000
-
   vectors:
     on_disk: true  # Critical for 6GB VRAM
 
@@ -9,6 +6,10 @@ storage:
     on_disk: true  # Store HNSW index on disk
     m: 16
     ef_construct: 128
+
+optimizers: # Move this to root level
+  indexing_threshold: 10000
+  memmap_threshold: 20000
 
 quantization:
   scalar:
