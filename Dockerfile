@@ -3,12 +3,12 @@ FROM nvidia/cuda:12.5.0-devel-ubuntu22.04 AS env-build
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake
+RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake ccache
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && cmake -E env GGML_CUDA_FA_ALL_QUANTS="ON" \
   && cmake -B build -DGGML_CUDA=ON
+  && cmake --build build --config Release -j 3
 
 FROM debian:12-slim AS env-deploy
 RUN apt-get update && apt-get install -y libgomp1
