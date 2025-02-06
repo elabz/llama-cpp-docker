@@ -3,7 +3,7 @@ FROM nvidia/cuda:12.5.0-devel-ubuntu22.04 AS env-build
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake ccache
+RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake ccache nvidia-cuda-toolkit
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
