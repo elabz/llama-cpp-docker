@@ -44,12 +44,12 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
+      - LLAMA_CTX_SIZE=16384
       - LLAMA_MODEL=/models/DeepSeek-R1-Distill-Llama-8B-Q4_K_M.gguf
       - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=512
-      - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_UBATCH_SIZE=2048
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
 
     volumes:
@@ -64,12 +64,12 @@ services:
     restart: unless-stopped
     environment:
       - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
+      - LLAMA_CTX_SIZE=16384
       - LLAMA_MODEL=/models/DeepSeek-R1-Distill-Llama-8B-Q4_K_M.gguf
       - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=512
-      - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_BATCH_SIZE=1024
+      - LLAMA_UBATCH_SIZE=2048
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
 
     volumes:
