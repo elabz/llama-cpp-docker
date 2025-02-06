@@ -49,6 +49,9 @@ Dolphin3.0-Llama3.2-3B:
 phi-4:
 	cd models && ../docker-entrypoint.sh $@
 
+DeepSeek-R1-Distill-Llama:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
