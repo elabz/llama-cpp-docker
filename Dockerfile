@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y build-essential git libgomp1
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && make -j LLAMA_CUDA=1 CUDA_DOCKER_ARCH=all
+  && cmake -B build -DGGML_CUDA=ON LLAMA_CUDA=1 CUDA_DOCKER_ARCH=all GGML_CUDA_FA_ALL_QUANTS=ON
 
 FROM debian:12-slim AS env-deploy
 RUN apt-get update && apt-get install -y libgomp1
