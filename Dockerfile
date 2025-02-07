@@ -16,8 +16,6 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-COPY . .
-
 RUN if [ "${CUDA_DOCKER_ARCH}" != "default" ]; then \
     export CMAKE_ARGS="-DCMAKE_CUDA_ARCHITECTURES=${CUDA_DOCKER_ARCH}"; \
     fi && \
