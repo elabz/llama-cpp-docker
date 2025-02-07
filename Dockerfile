@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake ccac
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && cmake -B build -DGGML_CUDA=ON \
+  && cmake -B build -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES="52;61;70;75" \
   && cmake --build build --config Release -j 3
 
 FROM debian:12-slim AS env-deploy
