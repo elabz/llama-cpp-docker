@@ -91,5 +91,5 @@ EXPOSE 8080
 
 # copy and set entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-
+HEALTHCHECK CMD [ "curl", "-f", "http://localhost:8080/health" ]
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
