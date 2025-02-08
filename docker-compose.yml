@@ -49,7 +49,7 @@ services:
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
       - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
 
     volumes:
@@ -69,7 +69,7 @@ services:
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
       - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
 
     volumes:
@@ -89,7 +89,7 @@ services:
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
       - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
       - LLAMA_EMBEDDING=
     volumes:
@@ -109,7 +109,7 @@ services:
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=2048
       - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=4
+      - LLAMA_THREADS=3
       - LLAMA_LOG_FILE=llama
       - LLAMA_EMBEDDING=
     volumes:
