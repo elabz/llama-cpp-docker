@@ -85,8 +85,6 @@ FROM base AS server
 COPY --from=build /app/full/llama-server /app
 WORKDIR /app
 
-HEALTHCHECK CMD [ "curl", "-f", "http://localhost:8080/health" ]
-
 EXPOSE 8080
 
 # copy and set entrypoint script
