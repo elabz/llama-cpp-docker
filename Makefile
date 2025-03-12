@@ -46,7 +46,7 @@ Llama-3.2-3B-Instruct:
 Dolphin3.0-Llama3.2-3B:
 	cd models && ../docker-entrypoint.sh $@
 
-phi-4:
+phi-4-mini:
 	cd models && ../docker-entrypoint.sh $@
 
 DeepSeek-R1-Distill-Llama:

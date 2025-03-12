@@ -45,7 +45,7 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/Dolphin3.0-Llama3.2-3B-Q8_0.gguf
+      - LLAMA_MODEL=/models/Phi-4-mini-instruct.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
       - LLAMA_UBATCH_SIZE=512
@@ -65,7 +65,7 @@ services:
     environment:
       - GGML_CUDA_NO_PINNED=1
       - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/Dolphin3.0-Llama3.2-3B-Q8_0.gguf
+      - LLAMA_MODEL=/models/Phi-4-mini-instruct.Q8_0.gguf
       - LLAMA_N_GPU_LAYERS=99
       - LLAMA_BATCH_SIZE=1024
       - LLAMA_UBATCH_SIZE=512
