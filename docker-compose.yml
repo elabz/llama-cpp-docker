@@ -12,6 +12,15 @@ services:
       - ./logs/nginx:/var/log/nginx
     networks:
       - llms
+    depends_on:
+      - llama1
+      - llama2
+      - llama3
+      - llama4
+      - llama5
+      - llama6
+      - llama7
+      - llama8
 
   qdrant:
     build: ./qdrant
@@ -31,27 +40,27 @@ services:
       - ./qdrant_data:/qdrant/storage
       - ./qdrant/config:/qdrant/config
     environment:
-      - QDRANT__STORAGE__OPTIMIZERS__GPU_MEMORY_FRACTION=0.75
-      - QDRANT__GPU__INDEXING=1
+      - QDRANT__STORAGE__OPTIMIZERS__GPU_MEMORY_FRACTION=${QDRANT_GPU_MEMORY_FRACTION}
+      - QDRANT__GPU__INDEXING=${QDRANT_GPU_INDEXING}
     command: ./qdrant --config-path /qdrant/config/config.yaml
     mem_limit: 24g
     networks:
       - llms
 
-  llama1:
+  # Completion model containers (llama1-llama4)
+  llama1: &completion_model_template
     image: llama-cpp-docker
     container_name: llama1
     restart: unless-stopped
     environment:
-      - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/Phi-4-mini-instruct.Q8_0.gguf
-      - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=1024
-      - LLAMA_UBATCH_SIZE=512
-      - LLAMA_THREADS=3
-      - LLAMA_LOG_FILE=llama
-
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${COMPLETION_CTX_SIZE}
+      - LLAMA_MODEL=${COMPLETION_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${COMPLETION_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama1
     volumes:
       - ./models:/models
       - ./logs:/logs
@@ -59,67 +68,110 @@ services:
       - llms
 
   llama2:
-    image: llama-cpp-docker
+    <<: *completion_model_template
     container_name: llama2
-    restart: unless-stopped
     environment:
-      - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=8192
-      - LLAMA_MODEL=/models/Phi-4-mini-instruct.Q8_0.gguf
-      - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=1024
-      - LLAMA_UBATCH_SIZE=512
-      - LLAMA_THREADS=3
-      - LLAMA_LOG_FILE=llama
-
-    volumes:
-      - ./models:/models
-      - ./logs:/logs
-    networks:
-      - llms
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${COMPLETION_CTX_SIZE}
+      - LLAMA_MODEL=${COMPLETION_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${COMPLETION_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama2
 
   llama3:
-    image: llama-cpp-docker
+    <<: *completion_model_template
     container_name: llama3
+    environment:
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${COMPLETION_CTX_SIZE}
+      - LLAMA_MODEL=${COMPLETION_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${COMPLETION_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama3
+
+  llama4:
+    <<: *completion_model_template
+    container_name: llama4
+    environment:
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${COMPLETION_CTX_SIZE}
+      - LLAMA_MODEL=${COMPLETION_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${COMPLETION_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama4
+
+  # Embedding model containers (llama5-llama8)
+  llama5: &embedding_model_template
+    image: llama-cpp-docker
+    container_name: llama5
     restart: unless-stopped
     environment:
-      - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
-      - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=2048
-      - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=3
-      - LLAMA_LOG_FILE=llama
-      - LLAMA_EMBEDDING=
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${EMBEDDING_CTX_SIZE}
+      - LLAMA_MODEL=${EMBEDDING_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${EMBEDDING_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama5
+      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
     volumes:
       - ./models:/models
       - ./logs:/logs
     networks:
       - llms
 
-  llama4:
-    image: llama-cpp-docker
-    container_name: llama4
-    restart: unless-stopped
+  llama6:
+    <<: *embedding_model_template
+    container_name: llama6
     environment:
-      - GGML_CUDA_NO_PINNED=1
-      - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/nomic-embed-text-v1.5.Q8_0.gguf
-      - LLAMA_N_GPU_LAYERS=99
-      - LLAMA_BATCH_SIZE=2048
-      - LLAMA_UBATCH_SIZE=1024
-      - LLAMA_THREADS=3
-      - LLAMA_LOG_FILE=llama
-      - LLAMA_EMBEDDING=
-    volumes:
-      - ./models:/models
-      - ./logs:/logs
-    networks:
-      - llms
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${EMBEDDING_CTX_SIZE}
+      - LLAMA_MODEL=${EMBEDDING_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${EMBEDDING_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama6
+      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+
+  llama7:
+    <<: *embedding_model_template
+    container_name: llama7
+    environment:
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${EMBEDDING_CTX_SIZE}
+      - LLAMA_MODEL=${EMBEDDING_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${EMBEDDING_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama7
+      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+
+  llama8:
+    <<: *embedding_model_template
+    container_name: llama8
+    environment:
+      - GGML_CUDA_NO_PINNED=${GGML_CUDA_NO_PINNED}
+      - LLAMA_CTX_SIZE=${EMBEDDING_CTX_SIZE}
+      - LLAMA_MODEL=${EMBEDDING_MODEL}
+      - LLAMA_N_GPU_LAYERS=${LLAMA_N_GPU_LAYERS}
+      - LLAMA_BATCH_SIZE=${EMBEDDING_BATCH_SIZE}
+      - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
+      - LLAMA_THREADS=${LLAMA_THREADS}
+      - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama8
+      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
 
 networks:
   llms:
     name: llms
+
 volumes:
   qdrant_data:

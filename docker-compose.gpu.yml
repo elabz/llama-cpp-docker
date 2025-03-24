@@ -1,48 +1,117 @@
 version: "3.9"
 services:
+  # RTX 3070 - Device 0 (llama1 and llama6)
   llama1:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 1
               capabilities: [gpu]
+              device_ids: ['0']  # First RTX 3070
     environment:
-      - CUDA_VISIBLE_DEVICES=0
+      - NVIDIA_VISIBLE_DEVICES=0
       - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=RTX3070
+
+  llama5:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              device_ids: ['0']  # First RTX 3070 (shared with llama1)
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=RTX3070
+
+  # RTX 3070 - Device 1 (llama2 and llama4)
   llama2:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 1
               capabilities: [gpu]
+              device_ids: ['1']  # Second RTX 3070
     environment:
-      - CUDA_VISIBLE_DEVICES=1
+      - NVIDIA_VISIBLE_DEVICES=1
       - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=RTX3070
 
+  llama6:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              device_ids: ['1']  # Second RTX 3070 (shared with llama2)
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=1
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=RTX3070
+
+  # P104-100 - Device 2 (llama3 and llama7)
   llama3:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 1
               capabilities: [gpu]
+              device_ids: ['2']  # First P104-100
     environment:
-      - CUDA_VISIBLE_DEVICES=0
+      - NVIDIA_VISIBLE_DEVICES=2
       - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=P104-100
 
+  llama7:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              device_ids: ['2']  # First P104-100 (shared with llama3)
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=2
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=P104-100
+
+  # P104-100 - Device 3 (llama5 and llama8)
   llama4:
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: 2
+              count: 1
               capabilities: [gpu]
+              device_ids: ['3']  # Second P104-100
     environment:
-      - CUDA_VISIBLE_DEVICES=1
+      - NVIDIA_VISIBLE_DEVICES=3
       - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=P104-100
+
+  llama8:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              device_ids: ['3']  # Second P104-100 (shared with llama5)
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=3
+      - CUDA_DEVICE_ORDER=PCI_BUS_ID
+      - GPU_MODEL=P104-100
