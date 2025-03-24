@@ -7,7 +7,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['0']  # First RTX 3070
     environment:
@@ -21,7 +20,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['0']  # First RTX 3070 (shared with llama1)
     environment:
@@ -36,7 +34,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['1']  # Second RTX 3070
     environment:
@@ -50,7 +47,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['1']  # Second RTX 3070 (shared with llama2)
     environment:
@@ -65,7 +61,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['2']  # First P104-100
     environment:
@@ -94,7 +89,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['3']  # Second P104-100
     environment:
@@ -108,7 +102,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
               capabilities: [gpu]
               device_ids: ['3']  # Second P104-100 (shared with llama5)
     environment:
