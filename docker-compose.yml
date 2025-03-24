@@ -120,7 +120,7 @@ services:
       - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama5
-      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+      - LLAMA_EMBEDDING=
     volumes:
       - ./models:/models
       - ./logs:/logs
@@ -139,7 +139,7 @@ services:
       - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama6
-      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+      - LLAMA_EMBEDDING=
 
   llama7:
     <<: *embedding_model_template
@@ -153,7 +153,7 @@ services:
       - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama7
-      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+      - LLAMA_EMBEDDING=
 
   llama8:
     <<: *embedding_model_template
@@ -167,7 +167,7 @@ services:
       - LLAMA_UBATCH_SIZE=${EMBEDDING_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama8
-      - LLAMA_EMBEDDING=${EMBEDDING_FLAG}
+      - LLAMA_EMBEDDING=
 
 networks:
   llms:
