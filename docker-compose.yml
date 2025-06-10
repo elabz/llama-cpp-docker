@@ -61,6 +61,7 @@ services:
       - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama1
+      - LLAMA_JINJA=
     volumes:
       - ./models:/models
       - ./logs:/logs
@@ -79,6 +80,7 @@ services:
       - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama2
+      - LLAMA_JINJA=
 
   llama3:
     <<: *completion_model_template
@@ -92,6 +94,7 @@ services:
       - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama3
+      - LLAMA_JINJA=
 
   llama4:
     <<: *completion_model_template
@@ -105,6 +108,7 @@ services:
       - LLAMA_UBATCH_SIZE=${COMPLETION_UBATCH_SIZE}
       - LLAMA_THREADS=${LLAMA_THREADS}
       - LLAMA_LOG_FILE=${LLAMA_LOG_FILE}_llama4
+      - LLAMA_JINJA=
 
   # Embedding model containers (llama5-llama8)
   llama5: &embedding_model_template

@@ -83,4 +83,4 @@ LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
 }')
 
 set -x
-/app/llama-server $LLAMA_ARGS --jinja
+/app/llama-server $LLAMA_ARGS
